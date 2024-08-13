@@ -1,0 +1,20 @@
+name: TownyGovernments_v1
+version: '1.0'
+main: org.flintstqne.townygovernments_v1.Main
+api-version: '1.20'
+commands:
+  teco:
+    description: Summons the economic systems menu
+    usage: /<command>
+    aliases: [te]
+    permission: townygovernments.command.teco
+    permission-message: You do not have permission to use this command.
+  tgov:
+    description: Summons the government systems menu
+    usage: /<command>
+    aliases: [ tg ]
+    permission: townygovernments.command.tgov
+    permission-message: You do not have permission to use this command.
+  dumpData:
+    description: Wipes the entire database for debugging purposes.
+    usage: /<command>
