@@ -1,0 +1,26 @@
+# Builds, tests the project with Gradle
+name: CI Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build with Maven
+      uses: offa/maven-action@main
+      with:
+        java-version: 17
+        pmd: true
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: TrMenu Artifact
+        path: target/*.jar
